@@ -1,0 +1,13 @@
+/bin/
+.project
+.classpath
+.settings/
+.DS_Store
+.lck
+.properties
+.ctrl
+.dat
+README_DO_NOT_TOUCH_FILES.txt
+.log
+.jar
+.tbl
