@@ -8,7 +8,7 @@
 **/*.ctrl
 **/*.dat
 **/README_DO_NOT_TOUCH_FILES.txt
-**/.log
+**/*.log
 **/*.jar
 **/*.tbl
 **/*.class
