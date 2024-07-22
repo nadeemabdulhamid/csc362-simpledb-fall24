@@ -10,19 +10,19 @@ import simpledb.server.SimpleDB;
  */
 @SuppressWarnings("serial")
 public class RemoteDriverImpl extends UnicastRemoteObject implements RemoteDriver {
-   private SimpleDB db;
-   
-   public RemoteDriverImpl(SimpleDB db) throws RemoteException {
-      this.db = db;
-   }
-   
-   /**
-    * Creates a new RemoteConnectionImpl object and 
-    * returns it.
-    * @see simpledb.jdbc.network.RemoteDriver#connect()
-    */
-   public RemoteConnection connect() throws RemoteException {
-      return new RemoteConnectionImpl(db);
-   }
+	private SimpleDB db;
+
+	public RemoteDriverImpl(SimpleDB db) throws RemoteException {
+		this.db = db;
+	}
+
+	/**
+	 * Creates a new RemoteConnectionImpl object and 
+	 * returns it.
+	 * @see simpledb.jdbc.network.RemoteDriver#connect()
+	 */
+	public RemoteConnection connect() throws RemoteException {
+		return new RemoteConnectionImpl(db);
+	}
 }
 

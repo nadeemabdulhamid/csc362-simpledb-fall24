@@ -7,9 +7,9 @@ import java.util.*;
 
 public class SingleTablePlanTest {
 	public static void main(String[] args) throws Exception {
-      SimpleDB db = new SimpleDB("studentdb");
-      MetadataMgr mdm = db.mdMgr();
-      Transaction tx = db.newTx();
+		SimpleDB db = new SimpleDB("studentdb");
+		MetadataMgr mdm = db.mdMgr();
+		Transaction tx = db.newTx();
 
 		//the STUDENT node
 		Plan p1 = new TablePlan(tx, "student", mdm);
@@ -30,7 +30,7 @@ public class SingleTablePlanTest {
 
 		// Look at R(p) and B(p) for each plan p.
 		printStats(1, p1); printStats(2, p2); printStats(3, p3); printStats(4, p4);
-		
+
 		// Change p2 to be p2, p3, or p4 to see the other scans in action.
 		// Changing p2 to p4 will throw an exception because SID is not in the projection list.
 		Scan s = p2.open();
@@ -39,7 +39,7 @@ public class SingleTablePlanTest {
 			+ " " + s.getInt("majorid") + " " + s.getInt("gradyear"));
 		s.close();
 	}
-	
+
 	private static void printStats(int n, Plan p) {
 		System.out.println("Here are the stats for plan p" + n);
 		System.out.println("\tR(p" + n + "): " + p.recordsOutput());

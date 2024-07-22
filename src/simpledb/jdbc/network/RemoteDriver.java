@@ -10,6 +10,6 @@ import java.rmi.*;
  * @author Edward Sciore
  */
 public interface RemoteDriver extends Remote {
-   public RemoteConnection connect() throws RemoteException;
+	public RemoteConnection connect() throws RemoteException;
 }
 

@@ -46,17 +46,17 @@ public class SelectScan implements UpdateScan {
 		return s.getString(fldname);
 	}
 
-   public Constant getVal(String fldname) {
-      return s.getVal(fldname);
-   }
+	public Constant getVal(String fldname) {
+		return s.getVal(fldname);
+	}
 
 	public boolean hasField(String fldname) {
 		return s.hasField(fldname);
 	}
 
-   public void close() {
-      s.close();
-   }
+	public void close() {
+		s.close();
+	}
 
 	// UpdateScan methods
 
@@ -70,10 +70,10 @@ public class SelectScan implements UpdateScan {
 		us.setString(fldname, val);
 	}
 
-   public void setVal(String fldname, Constant val) {
-      UpdateScan us = (UpdateScan) s;
-      us.setVal(fldname, val);
-   }
+	public void setVal(String fldname, Constant val) {
+		UpdateScan us = (UpdateScan) s;
+		us.setVal(fldname, val);
+	}
 
 	public void delete() {
 		UpdateScan us = (UpdateScan) s;

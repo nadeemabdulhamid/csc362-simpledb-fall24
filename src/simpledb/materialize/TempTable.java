@@ -12,44 +12,44 @@ import simpledb.record.*;
  * @author Edward Sciore
  */
 public class TempTable {
-   private static int nextTableNum = 0;
-   private Transaction tx;
-   private String tblname;
-   private Layout layout;
-   
-   /**
-    * Allocate a name for for a new temporary table
-    * having the specified schema.
-    * @param sch the new table's schema
-    * @param tx the calling transaction
-    */
-   public TempTable(Transaction tx, Schema sch) {
-      this.tx = tx;
-      tblname = nextTableName();
-      layout = new Layout(sch);
-   }
-   
-   /**
-    * Open a table scan for the temporary table.
-    */
-   public UpdateScan open() {
-      return new TableScan(tx, tblname, layout);
-   }
-   
-   public String tableName() {
-      return tblname;
-   }
-   
-   /**
-    * Return the table's metadata.
-    * @return the table's metadata
-    */
-   public Layout getLayout() {
-      return layout;
-   }
+	private static int nextTableNum = 0;
+	private Transaction tx;
+	private String tblname;
+	private Layout layout;
 
-   private static synchronized String nextTableName() {
-      nextTableNum++;
-      return "temp" + nextTableNum;
-   }
+	/**
+	 * Allocate a name for for a new temporary table
+	 * having the specified schema.
+	 * @param sch the new table's schema
+	 * @param tx the calling transaction
+	 */
+	public TempTable(Transaction tx, Schema sch) {
+		this.tx = tx;
+		tblname = nextTableName();
+		layout = new Layout(sch);
+	}
+
+	/**
+	 * Open a table scan for the temporary table.
+	 */
+	public UpdateScan open() {
+		return new TableScan(tx, tblname, layout);
+	}
+
+	public String tableName() {
+		return tblname;
+	}
+
+	/**
+	 * Return the table's metadata.
+	 * @return the table's metadata
+	 */
+	public Layout getLayout() {
+		return layout;
+	}
+
+	private static synchronized String nextTableName() {
+		nextTableNum++;
+		return "temp" + nextTableNum;
+	}
 }

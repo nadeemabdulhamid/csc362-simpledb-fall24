@@ -9,7 +9,7 @@ import java.rmi.*;
  * @author Edward Sciore
  */
 public interface RemoteConnection extends Remote {
-   public RemoteStatement createStatement() throws RemoteException;
-   public void close() throws RemoteException;
+	public RemoteStatement createStatement() throws RemoteException;
+	public void close() throws RemoteException;
 }
 
